@@ -344,20 +344,16 @@ int main(int argc, char* argv[])
 
 	int n;
 	int num;
+	fin = fopen("E://school//comp//FYP//TSL//code//rela_for_Kvdo_Japan.txt", "r");
 	
-	//n=������ num=node���id
+	
 	if (argv[2] != NULL){
 		fin = fopen(argv[2], "r");
-	}
-	else {
-		fin = fopen("D:/For-F-drive/school/comp/FYP/TSL/code/rela_for_Kvdo_Japan.txt", "r");
-	//	fin = fopen("D:/For-F-drive/school/comp/FYP/TSL/code/DAG_LATT20.txt", "r");
-	//	fin = fopen("dag-data.txt", "r");
 	}
 	
 	fscanf(fin, "%d %d", &n, &num);
 	
-	//printf("Total records and nodes: %d %d\n", n, num);
+	printf("Total records and nodes: %d %d\n", n, num);
 
 	cnt = 0;
 	dag_n = num;
@@ -392,18 +388,7 @@ int main(int argc, char* argv[])
 	fclose(fin);
 	//fin = fopen("freq-dag.txt", "r");
 	//fin = fopen("D:/For-F-drive/school/comp/FYP/TSL/code/feq-dag-latt.txt", "r");
-	if (argv[3] != NULL) {
-		fin = fopen(argv[3], "r");
-	}
-	else {
-		fin = fopen("E:/school/comp/FYP/TSL/code/rela_for_Kvdo_Japan.txt", "r");
-		//	fin = fopen("D:/For-F-drive/school/comp/FYP/TSL/code/DAG_LATT20.txt", "r");
-		//	fin = fopen("dag-data.txt", "r");
-	}
-
-	fscanf(fin, "%d %d", &n, &num);
-
-	fin = fopen("E:/school/comp/FYP/TSL/code/freq_for_Kvdo_Japan.txt", "r");
+	fin = fopen("E://school//comp//FYP//TSL//code//freq_for_Kvdo_Japan.txt", "r");
 	
 	int m;
 	fscanf(fin, "%d", &m);
@@ -425,7 +410,7 @@ int main(int argc, char* argv[])
 	}
 
 	fclose(fin);
-	ifstream infile("E:/school/comp/eclipse-workspace/test/WebContent/name_and_ID_Japan.csv",ios::in );
+	ifstream infile("E://school//comp//eclipse-workspace//test//WebContent//name_and_ID_Japan.csv",ios::in );
 	string line;
 	while (getline(infile, line)) {
 		//cout << line << endl;
@@ -446,15 +431,15 @@ int main(int argc, char* argv[])
 		
 	}
 
-	fout_record = fopen("E:/school/comp/eclipse-workspace/test/WebContent/ScoreResult.csv", "w");
+	fout_record = fopen("E://school//comp/eclipse-workspace/test/WebContent/ScoreResult.csv", "w");
 	init();
-	//printf("----------end init-----------\n");
+	printf("----------end init-----------\n");
 	select(K);
-	//printf("============= Answers ============\n");
+	printf("============= Answers ============\n");
 	
 	sort(S.begin(), S.end());
 	
-	fout = fopen("E:/school/comp/eclipse-workspace/test/WebContent/dag-result.csv", "w");
+	fout = fopen("E://school//comp//eclipse-workspace//test//WebContent//dag-result.csv", "w");
 
 	translate_dag();
 	fclose(fout);
